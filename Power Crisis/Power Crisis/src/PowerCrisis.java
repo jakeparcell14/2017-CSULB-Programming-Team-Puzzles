@@ -35,6 +35,7 @@ public class PowerCrisis
 			}
 		}
 
+		// stores results
 		ArrayList<Integer> results = new ArrayList<Integer>();
 		
 		// iterate through all given integers
@@ -70,6 +71,12 @@ public class PowerCrisis
 		return list;
 	}
 
+	/**
+	 * Determines if a given number follows the given rules
+	 * @param incrementer	amount of values to increment by
+	 * @param listSize		size of the number list
+	 * @return				true if number is valid, false if number is not valid
+	 */
 	public static boolean checkNum(int incrementer, int listSize)
 	{
 		ArrayList<Integer> numberList = getIntegerList(listSize);
@@ -85,10 +92,12 @@ public class PowerCrisis
 
 			if(removedNum != 13)
 			{
+				// the number 13 has not been removed yet
 				index = (index + incrementer) % numberList.size();
 			}
 			else
 			{
+				// the number 13 has been removed prematurely
 				return false;
 			}
 		}
@@ -96,6 +105,10 @@ public class PowerCrisis
 		return true;
 	}
 	
+	/**
+	 * Prints each value of a given ArrayList on its own line
+	 * @param results	given ArrayList
+	 */
 	public static void printResults(ArrayList<Integer> results)
 	{
 		for(int i = 0; i < results.size(); i++)
