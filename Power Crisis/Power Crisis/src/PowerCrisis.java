@@ -35,6 +35,8 @@ public class PowerCrisis
 			}
 		}
 
+		ArrayList<Integer> results = new ArrayList<Integer>();
+		
 		// iterate through all given integers
 		for(int input : userInput)
 		{
@@ -44,9 +46,11 @@ public class PowerCrisis
 			{
 				incrementer++;
 			}
-
+			
+			results.add(incrementer);
 		}
-
+		
+		printResults(results);
 	}
 
 	/**
@@ -90,6 +94,14 @@ public class PowerCrisis
 		}
 
 		return true;
+	}
+	
+	public static void printResults(ArrayList<Integer> results)
+	{
+		for(int i = 0; i < results.size(); i++)
+		{
+			System.out.println(results.get(i));
+		}
 	}
 
 }
