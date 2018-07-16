@@ -18,6 +18,7 @@ public class PowerCrisis
 		
 		ArrayList<Integer> userInput = new ArrayList<Integer>();
 		
+		// take in user input
 		while(in.hasNext())
 		{
 			int entry = in.nextInt();
@@ -33,6 +34,25 @@ public class PowerCrisis
 				break;
 			}
 		}
+		
+		
+	}
+	
+	/**
+	 * create ArrayList with a list of integers between 1 and a given number
+	 * @param size	top range of integers
+	 * @return 		list of integers between 1 and the given number
+	 */
+	public static ArrayList<Integer> getIntegerList(int size)
+	{
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		for(int i = 1; i <= size; i++)
+		{
+			list.add(i);
+		}
+		
+		return list;
 	}
 
 }
