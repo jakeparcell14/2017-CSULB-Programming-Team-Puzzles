@@ -67,7 +67,7 @@ public class PowerCrisis
 		{
 			list.add(i);
 		}
-
+		
 		return list;
 	}
 
@@ -101,7 +101,7 @@ public class PowerCrisis
 				return false;
 			}
 		}
-
+		
 		return true;
 	}
 	
@@ -116,5 +116,4 @@ public class PowerCrisis
 			System.out.println(results.get(i));
 		}
 	}
-
 }
