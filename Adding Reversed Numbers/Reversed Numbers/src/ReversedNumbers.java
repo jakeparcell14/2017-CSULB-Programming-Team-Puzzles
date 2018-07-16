@@ -1,8 +1,15 @@
 import java.util.Scanner;
 
+/**
+ * This program takes in pairs of integers given by the user. The user can enter as many pairs of integers
+ * as they want. When they are finished entering pairs of numbers, they enter zero and the program begins
+ * its calculations. The program reverses the order of numbers of each integer and calculates the sum of 
+ * those two reversed numbers. That sum is then reversed and printed to the console
+ * @author Jacob Parcell
+ *
+ */
 public class ReversedNumbers 
 {
-
 	public static void main(String[] args) 
 	{
 		Scanner in = new Scanner(System.in);
@@ -69,6 +76,4 @@ public class ReversedNumbers
 		
 		return reversed;
 	}
-	
-
 }
