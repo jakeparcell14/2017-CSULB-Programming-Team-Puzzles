@@ -15,14 +15,14 @@ public class PowerCrisis
 	public static void main(String[] args) 
 	{
 		Scanner in = new Scanner(System.in);
-		
+
 		ArrayList<Integer> userInput = new ArrayList<Integer>();
-		
+
 		// take in user input
 		while(in.hasNext())
 		{
 			int entry = in.nextInt();
-			
+
 			if(entry != 0)
 			{
 				// add user input to list of entries
@@ -34,25 +34,62 @@ public class PowerCrisis
 				break;
 			}
 		}
-		
-		
+
+		// iterate through all given integers
+		for(int input : userInput)
+		{
+			int incrementer = 1;
+
+			while(!checkNum(incrementer - 1, input))
+			{
+				incrementer++;
+			}
+
+		}
+
 	}
-	
+
 	/**
-	 * create ArrayList with a list of integers between 1 and a given number
+	 * Create ArrayList with a list of integers between 1 and a given number
 	 * @param size	top range of integers
 	 * @return 		list of integers between 1 and the given number
 	 */
 	public static ArrayList<Integer> getIntegerList(int size)
 	{
 		ArrayList<Integer> list = new ArrayList<Integer>();
-		
+
 		for(int i = 1; i <= size; i++)
 		{
 			list.add(i);
 		}
-		
+
 		return list;
+	}
+
+	public static boolean checkNum(int incrementer, int listSize)
+	{
+		ArrayList<Integer> numberList = getIntegerList(listSize);
+				
+		// remove number 1 first
+		int removedNum = numberList.remove(0);
+		
+		int index = incrementer;
+
+		while(numberList.size() > 1) 
+		{
+			removedNum = numberList.remove(index);
+
+			if(removedNum != 13)
+			{
+				index = (index + incrementer) % numberList.size();
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 }
