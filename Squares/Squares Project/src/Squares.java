@@ -46,6 +46,11 @@ public class Squares
 			return -1;
 	}
 	
+	/**
+	 * This will take in a number and calculate if it is a perfect square
+	 * @param num	given number
+	 * @return		true if number is a perfect square, false if number is not a perfect square
+	 */
 	public static boolean isPerfectSquare(int num)
 	{
 		// square root of num
