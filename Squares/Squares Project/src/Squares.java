@@ -45,6 +45,24 @@ public class Squares
 
 			return -1;
 	}
+	
+	public static boolean isPerfectSquare(int num)
+	{
+		// square root of num
+		double sqrt = Math.sqrt(num);
+				
+		// square root of num with no decimal places
+		int test = (int) sqrt;
+		
+		// check if squares are the same
+		if(Math.pow(sqrt, 2) == Math.pow(test, 2))
+		{
+			// num is a perfect square
+			return true;
+		}
+		
+		return false;
+	}
 
 	/**
 	 * This method changes a numbers numerical system
