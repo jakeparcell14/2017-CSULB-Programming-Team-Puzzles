@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Squares 
 {
-
 	public static void main(String[] args) 
 	{
 		Scanner in = new Scanner(System.in);
@@ -50,7 +49,6 @@ public class Squares
 				return i;
 			}
 		}
-
 
 		return -1;
 	}
@@ -124,5 +122,4 @@ public class Squares
 
 		return max;		
 	}
-
 }
