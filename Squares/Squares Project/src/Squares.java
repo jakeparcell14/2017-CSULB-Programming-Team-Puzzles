@@ -34,9 +34,24 @@ public class Squares
 		return -1;
 	}
 	
+	public static int convertBase(int userInput, int base)
+	{
+		String num = Integer.toString(userInput);
+		int result = 0;
+		
+		for(int i = 1; i <= num.length(); i++)
+		{
+			int multiplier = Integer.parseInt(num.substring(i - 1, i));
+			
+			result += ((int) Math.pow(base, num.length() - i)) * multiplier;
+		}
+		
+		return result;
+	}
+	
 	/**
 	 * This program will go through each individual number of the integer and find the largest number
-	 * @param num
+	 * @param num	
 	 * @return
 	 */
 	public static int findLargestNumber(int num)
