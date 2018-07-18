@@ -38,14 +38,20 @@ public class Squares
 		// find the lowest possible numerical base
 		int lowestPossibleBase = findLargestNumber(userInput) + 1;
 
-		while
+		for(int i = lowestPossibleBase; i < 100; i++)
+		{
+			int inputNewBase = convertBase(userInput, i);
+
+			if(isPerfectSquare(inputNewBase))
+			{
+				return i;
+			}
+		}
 
 
-
-
-			return -1;
+		return -1;
 	}
-	
+
 	/**
 	 * This will take in a number and calculate if it is a perfect square
 	 * @param num	given number
@@ -55,17 +61,17 @@ public class Squares
 	{
 		// square root of num
 		double sqrt = Math.sqrt(num);
-				
+
 		// square root of num with no decimal places
 		int test = (int) sqrt;
-		
+
 		// check if squares are the same
 		if(Math.pow(sqrt, 2) == Math.pow(test, 2))
 		{
 			// num is a perfect square
 			return true;
 		}
-		
+
 		return false;
 	}
 
