@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This program will convert a given base 10 number into a different base until it results in a perfect square
+ * @author Jacob Parcell
+ *
+ */
 public class Squares 
 {
 	public static void main(String[] args) 
