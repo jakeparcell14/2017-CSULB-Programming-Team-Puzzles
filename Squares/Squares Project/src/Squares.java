@@ -24,8 +24,6 @@ public class Squares
 			}
 		}
 
-		System.out.println(Math.sqrt(9));
-
 		for(int i = 0; i < userInput.size(); i++)
 		{
 			// find results and print them to the console
@@ -33,6 +31,11 @@ public class Squares
 		}
 	}
 
+	/**
+	 * This will find the lowest base of the input that results in a perfect square
+	 * @param userInput		number to be tested
+	 * @return				lowest valid base
+	 */
 	public static int findBase(int userInput)
 	{
 		// find the lowest possible numerical base
