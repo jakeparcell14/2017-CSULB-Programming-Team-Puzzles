@@ -57,8 +57,8 @@ public class Squares
 	
 	/**
 	 * This program will go through each individual number of the integer and find the largest number
-	 * @param num	
-	 * @return
+	 * @param num	given integer
+	 * @return		largest individual number in the given integer
 	 */
 	public static int findLargestNumber(int num)
 	{
