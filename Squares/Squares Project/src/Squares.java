@@ -34,6 +34,12 @@ public class Squares
 		return -1;
 	}
 	
+	/**
+	 * This method changes a numbers numerical system
+	 * @param userInput		given integer to change	
+	 * @param base			new base for userInput
+	 * @return				the given integer in the different numerical system
+	 */
 	public static int convertBase(int userInput, int base)
 	{
 		String num = Integer.toString(userInput);
