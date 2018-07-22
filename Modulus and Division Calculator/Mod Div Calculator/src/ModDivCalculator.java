@@ -28,7 +28,11 @@ public class ModDivCalculator {
 				break;
 			}
 		}
-				
+		
+		for(int i = 0; i < results.size(); i++)
+		{
+			System.out.println(results.get(i));
+		}
 	}
 	
 	public static String[] getLineInfo(String input)
