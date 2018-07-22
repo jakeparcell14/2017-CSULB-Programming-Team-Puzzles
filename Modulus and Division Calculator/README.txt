@@ -11,8 +11,8 @@ to write only the (integer) division and mod (% in C/C++) operations for him.
 
 Input 
 Input is a sequence of lines. Each line will contain an input number. One or more spaces. A sign (division or mod). Again spaces. And 
-another input number. Both the input numbers are nonnegative integer. The first one may be arbitrarily long. The second number n will be 
-in the range (0 < n < 231). 
+another input number. Both the input numbers are nonnegative integer. The first one may be arbitrarily long. The second number n will be in 
+the range (0 < n < 231). 
 
 Output 
 A line for each input, each containing an integer. See the sample input and output. Output should not contain any extra space. 
