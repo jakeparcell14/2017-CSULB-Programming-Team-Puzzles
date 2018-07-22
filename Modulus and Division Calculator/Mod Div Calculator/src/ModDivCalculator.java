@@ -14,12 +14,21 @@ public class ModDivCalculator {
 			
 			String[] line = getLineInfo(input);
 			
+			if(line[1].equals("/")) 
+			{
+				results.add(calculate(Integer.parseInt(line[0]), Integer.parseInt(line[2]), 0, true));
+			}
+			else
+			{
+				results.add(calculate(Integer.parseInt(line[0]), Integer.parseInt(line[2]), 0, false));
+			}
+			
 			if(results.size() > 3)
 			{
 				break;
 			}
 		}
-		
+				
 	}
 	
 	public static String[] getLineInfo(String input)
@@ -27,15 +36,22 @@ public class ModDivCalculator {
 		return input.split(" ");
 	}
 	
-	public static int divide(int divisor, int dividend, int counter)
+	public static int calculate(int divisor, int dividend, int counter, boolean dividing)
 	{
 		if(divisor < dividend)
 		{
-			return counter;
+			if(dividing)
+			{
+				return counter;
+			}
+			else
+			{
+				return divisor;
+			}
 		}
 		else
 		{
-			divide(divisor - dividend, dividend, counter++);
+			calculate(divisor - dividend, dividend, counter++, dividing);
 		}
 		
 		return 0;
