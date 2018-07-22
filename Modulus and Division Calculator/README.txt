@@ -5,10 +5,9 @@ Says a smart university student!!
 But his teacher even smarter – “Ok! I’d assign you such projects in your software lab. Don’t be so sad.” 
 “Really!!” – the students feels happy. And he feels so happy that he cannot see the smile in his teacher’s face. The first project for the 
 poor student was to make a calculator that can just perform the basic arithmetic operations. 
-But like many other university students he doesn’t like to do any project by himself. He just wants to collect programs from here and 
-there. 
-As you are a friend of him, he asks you to write the program. But, you are also intelligent enough to tackle this kind of people. You 
-agreed to write only the (integer) division and mod (% in C/C++) operations for him. 
+But like many other university students he doesn’t like to do any project by himself. He just wants to collect programs from here and there. 
+As you are a friend of him, he asks you to write the program. But, you are also intelligent enough to tackle this kind of people. You agreed
+to write only the (integer) division and mod (% in C/C++) operations for him. 
 
 Input 
 Input is a sequence of lines. Each line will contain an input number. One or more spaces. A sign (division or mod). Again spaces. And 
