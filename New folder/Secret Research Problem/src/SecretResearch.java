@@ -1,9 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This program will take in a user specified amount of numbers. It will then analyze each number for
+ * specific cases and return a certain symbol based on the case.
+ * @author Jacob Parcell
+ *
+ */
 public class SecretResearch 
 {
-
 	public static void main(String[] args) 
 	{
 		Scanner in = new Scanner(System.in);
@@ -28,6 +33,11 @@ public class SecretResearch
 
 	}
 
+	/**
+	 * This will process given digits and return a corresponding symbol if it fits certain cases
+	 * @param digits	number to be analyzed
+	 * @return			symbol based on what case the digits satisfy
+	 */
 	public static String processDigits(int digits)
 	{
 		String numbers = Integer.toString(digits);
