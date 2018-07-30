@@ -9,14 +9,12 @@ The encrypted result constitutes a string of digits S, which may take one of the
 • experiment failed S = 9S4 
 • experiment not completed S = 190S 
 
-(A sample result S35 means that if we add digits 35 from the right hand side to a digit sequence then we shall get the digit sequence 
-corresponding to a failed experiment) 
+(A sample result S35 means that if we add digits 35 from the right hand side to a digit sequence then we shall get the digit sequence corresponding to a failed experiment) 
 
 You are to write a program which decrypts given sequences of digits. 
 
 Input:
-A integer n stating the number of encrypted results and then consecutive n lines, each containing a sequence of digits given as ASCII 
-strings. 
+A integer n stating the number of encrypted results and then consecutive n lines, each containing a sequence of digits given as ASCII strings. 
 
 Output: 
 For each analysed sequence of digits the following lines should be sent to output (in separate lines): 
