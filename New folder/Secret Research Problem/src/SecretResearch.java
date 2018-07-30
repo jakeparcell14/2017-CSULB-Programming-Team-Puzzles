@@ -9,8 +9,10 @@ public class SecretResearch
 		Scanner in = new Scanner(System.in);
 
 		ArrayList<String> results = new ArrayList<String>();
-
-		while(in.hasNextInt())
+		
+		int count = in.nextInt();
+		
+		while(results.size() < count)
 		{
 			String answer = processDigits(in.nextInt());
 			
