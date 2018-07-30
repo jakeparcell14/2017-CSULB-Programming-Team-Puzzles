@@ -13,9 +13,12 @@ public class SecretResearch
 		while(in.hasNextInt())
 		{
 			String answer = processDigits(in.nextInt());
+			
+			// store results
 			results.add(answer);
 		}
 
+		// print results on separate lines
 		for(int i = 0; i < results.size(); i++)
 		{
 			System.out.println(results.get(i));
@@ -30,18 +33,22 @@ public class SecretResearch
 
 		if(numbers.equals("1") || numbers.equals("4") || numbers.equals("78"))
 		{
+			// positive case
 			return "+";
 		}
 		else if(numbers.substring(length - 2, length).equals("35"))
 		{
+			// negative case
 			return "-";
 		}
 		else if(numbers.substring(0, 1).equals("9") && numbers.substring(length - 1, length).equals("4"))
 		{
+			// experiment failed
 			return "*";
 		}
 		else if(numbers.substring(0, 3).equals("190"))
 		{
+			// experiment not completed
 			return "?";
 		}
 
