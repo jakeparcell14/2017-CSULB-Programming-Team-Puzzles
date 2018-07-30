@@ -1,6 +1,5 @@
 Secret Research 
-At a certain laboratory results of secret research are thoroughly encrypted. A result of a single experiment is stored as an information of
-its completion: 
+At a certain laboratory results of secret research are thoroughly encrypted. A result of a single experiment is stored as an information of its completion: 
 
 ‘positive result’, ‘negative result’, ‘experiment failed’ or ‘experiment not completed’ 
 
