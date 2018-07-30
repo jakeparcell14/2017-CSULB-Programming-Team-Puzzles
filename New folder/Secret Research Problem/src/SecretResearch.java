@@ -12,9 +12,21 @@ public class SecretResearch
 		
 		while(in.hasNextInt())
 		{
-			
+			String answer = processDigits(in.nextInt());
+			results.add(answer);
+		}
+		
+		for(int i = 0; i < results.size(); i++)
+		{
+			System.out.println(results.get(i));
 		}
 
+	}
+	
+	public static String processDigits(int digits)
+	{
+		
+		return null;
 	}
 
 }
