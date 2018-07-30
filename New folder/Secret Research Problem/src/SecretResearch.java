@@ -26,20 +26,25 @@ public class SecretResearch
 	public static String processDigits(int digits)
 	{
 		String numbers = Integer.toString(digits);
+		int length = numbers.length();
 		
-		if(numbers.length() == 1)
+		if(length == 1)
 		{
 			if(numbers.equals("1") || numbers.equals("4"))
 			{
 				return "+";
 			}
 		}
-		else if(numbers.length() == 2)
+		else if(length == 2)
 		{
 			if(numbers.equals("78"))
 			{
 				return "+";
 			}
+		}
+		else if(numbers.substring(length - 2, length).equals("35"))
+		{
+			return "-";
 		}
 		
 		return null;
