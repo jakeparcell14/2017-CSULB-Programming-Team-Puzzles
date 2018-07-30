@@ -46,6 +46,10 @@ public class SecretResearch
 		{
 			return "-";
 		}
+		else if(numbers.substring(0, 1).equals("9") && numbers.substring(length - 1, length).equals("4"))
+		{
+			return "*";
+		}
 		
 		return null;
 	}
