@@ -19,7 +19,7 @@ public class SecretResearch
 		
 		while(results.size() < count)
 		{
-			String answer = processDigits(in.nextInt());
+			String answer = processDigits(in.nextLine());
 			
 			// store results
 			results.add(answer);
@@ -38,27 +38,26 @@ public class SecretResearch
 	 * @param digits	number to be analyzed
 	 * @return			symbol based on what case the digits satisfy
 	 */
-	public static String processDigits(int digits)
+	public static String processDigits(String digits)
 	{
-		String numbers = Integer.toString(digits);
-		int length = numbers.length();
+		int length = digits.length();
 
-		if(numbers.equals("1") || numbers.equals("4") || numbers.equals("78"))
+		if(digits.equals("1") || digits.equals("4") || digits.equals("78"))
 		{
 			// positive case
 			return "+";
 		}
-		else if(numbers.substring(length - 2, length).equals("35"))
+		else if(digits.substring(length - 2, length).equals("35"))
 		{
 			// negative case
 			return "-";
 		}
-		else if(numbers.substring(0, 1).equals("9") && numbers.substring(length - 1, length).equals("4"))
+		else if(digits.substring(0, 1).equals("9") && digits.substring(length - 1, length).equals("4"))
 		{
 			// experiment failed
 			return "*";
 		}
-		else if(numbers.substring(0, 3).equals("190"))
+		else if(digits.substring(0, 3).equals("190"))
 		{
 			// experiment not completed
 			return "?";
