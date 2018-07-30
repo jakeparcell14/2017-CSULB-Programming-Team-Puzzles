@@ -28,14 +28,7 @@ public class SecretResearch
 		String numbers = Integer.toString(digits);
 		int length = numbers.length();
 
-		if(length == 1)
-		{
-			if(numbers.equals("1") || numbers.equals("4"))
-			{
-				return "+";
-			}
-		}
-		else if(numbers.equals("78"))
+		if(numbers.equals("1") || numbers.equals("4") || numbers.equals("78"))
 		{
 			return "+";
 		}
