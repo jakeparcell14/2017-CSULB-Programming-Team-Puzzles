@@ -6,7 +6,6 @@ import java.util.Stack;
 
 public class BallClock 
 {
-
 	public static void main(String[] args) 
 	{
 		Scanner in = new Scanner(System.in);
@@ -67,16 +66,19 @@ public class BallClock
 
 			if(minutes.size() > 4)
 			{
+				// empty minutes track and add most recent ball to fiveMinutes track
 				tilt(minutes, fiveMinutes, waitingBalls, false);
 			}
 
 			if(fiveMinutes.size() > 11)
 			{
+				// empty fiveMinutes track and add most recent ball to hours track
 				tilt(fiveMinutes, hours, waitingBalls, false);
 			}
 
 			if(hours.size() > 11)
 			{
+				// empty hours track and increment dayCount
 				dayCount += tilt(hours, null, waitingBalls, true);
 			}
 		}
