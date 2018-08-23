@@ -27,6 +27,8 @@ public class BallClock
 				break;
 			}
 		}
+		
+		printResults(results);
 	}
 	
 	public static void printResults(ArrayList<String> results)
@@ -38,7 +40,7 @@ public class BallClock
 	}
 
 	public static int simulateClock(int numberOfBalls)
-	{
+	{		
 		// can hold at most 4 balls
 		Stack<Integer> minutes = new Stack<Integer>();
 
@@ -53,8 +55,10 @@ public class BallClock
 
 		// set waiting balls in initial position
 		fillInitialWaitingBalls(waitingBalls, hours, numberOfBalls);
+		
+		Queue<Integer> initialPosition = new LinkedList<Integer>(waitingBalls);
 
-		double halfDayCount = 0;
+		double dayCount = 0;
 
 		do
 		{
@@ -69,18 +73,16 @@ public class BallClock
 			if(fiveMinutes.size() > 11)
 			{
 				tilt(fiveMinutes, hours, waitingBalls, false);
-
 			}
 
 			if(hours.size() > 11)
 			{
-				tilt(hours, null, waitingBalls, true);
-				halfDayCount++;
+				dayCount += tilt(hours, null, waitingBalls, true);
 			}
 		}
-		while(waitingBalls.peek() != 1);
+		while(!waitingBalls.equals(initialPosition));
 
-		return (int) halfDayCount / 2;
+		return (int) dayCount;
 	}
 
 	public static void fillInitialWaitingBalls(Queue<Integer> waitingBalls, Stack<Integer> hours, int numberOfBalls)
@@ -94,7 +96,7 @@ public class BallClock
 		}
 	}
 
-	public static int tilt(Stack<Integer> track, Stack<Integer> nextTrack, Queue<Integer> waiting, boolean hoursTrack)
+	public static double tilt(Stack<Integer> track, Stack<Integer> nextTrack, Queue<Integer> waiting, boolean hoursTrack)
 	{
 		// hold ball that caused the track to tilt
 		int tilterBall = track.pop();
@@ -122,7 +124,7 @@ public class BallClock
 			waiting.add(tilterBall);
 
 			// increment half day count
-			return 1;
+			return 0.5;
 		}
 
 	}
