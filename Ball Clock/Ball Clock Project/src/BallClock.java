@@ -50,8 +50,13 @@ public class BallClock
 
 	public static void fillInitialWaitingBalls(Queue<Integer> waitingBalls, Stack<Integer> hours, int numberOfBalls)
 	{
-		// add fixed hours ball
+		// add fixed ball in hours track
 		hours.push(0);
+		
+		for(int i = 1; i <= numberOfBalls; i++)
+		{
+			waitingBalls.add(i);
+		}
 		
 		
 	}
@@ -62,19 +67,22 @@ public class BallClock
 		int tilterBall = track.pop();
 		
 		// empty lower balls back into waiting queue
-		while(track.size() >= 0) 
+		while(track.size() >= 1) 
 		{
 			waiting.add(track.pop());
 		}
 
 		if(!hoursTrack)
 		{
-			// send final ball to next stack
+			// empty last ball in track
+			waiting.add(track.pop());
+			
+			// send tilter ball to next stack
 			nextTrack.push(tilterBall);
 		}
 		else
 		{
-			// send final ball to waiting queue
+			// leave last ball in the hours track because it's fixed and send tilter ball to waiting queue
 			waiting.add(tilterBall);
 		}
 
