@@ -28,6 +28,14 @@ public class BallClock
 			}
 		}
 	}
+	
+	public static void printResults(ArrayList<String> results)
+	{
+		for(String s : results)
+		{
+			System.out.println(s);
+		}
+	}
 
 	public static int simulateClock(int numberOfBalls)
 	{
