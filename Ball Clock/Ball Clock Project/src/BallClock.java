@@ -76,7 +76,7 @@ public class BallClock
 				tilt(fiveMinutes, hours, waitingBalls, false);
 			}
 
-			if(hours.size() > 11)
+			if(hours.size() > 12)
 			{
 				// empty hours track and increment dayCount
 				dayCount += tilt(hours, null, waitingBalls, true);
@@ -128,6 +128,5 @@ public class BallClock
 			// increment half day count
 			return 0.5;
 		}
-
 	}
 }
