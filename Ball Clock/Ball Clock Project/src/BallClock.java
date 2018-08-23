@@ -32,7 +32,7 @@ public class BallClock
 		}
 	}
 
-	public static int simulateClock(int numberOfBalls)
+	public static int simulateClock(int numberOfBalls)// TODO do i need the number of balls in this method?
 	{
 		Queue<Integer> waitingBalls = new LinkedList<Integer>();
 
@@ -48,15 +48,21 @@ public class BallClock
 		return 0;
 	}
 
-	public static void fillInitialWaitingBalls(Queue<Integer> waitingBalls)
+	public static void fillInitialWaitingBalls(Queue<Integer> waitingBalls, Stack<Integer> hours, int numberOfBalls)
 	{
-
+		// add fixed hours ball
+		hours.push(0);
+		
+		
 	}
 
 	public static void tilt(Stack<Integer> track, Stack<Integer> nextTrack, Queue<Integer> waiting, boolean hoursTrack)
 	{
+		// hold ball that caused the track to tilt
+		int tilterBall = track.pop();
+		
 		// empty lower balls back into waiting queue
-		while(track.size() >= 1) 
+		while(track.size() >= 0) 
 		{
 			waiting.add(track.pop());
 		}
@@ -64,12 +70,12 @@ public class BallClock
 		if(!hoursTrack)
 		{
 			// send final ball to next stack
-			nextTrack.push(track.pop());
+			nextTrack.push(tilterBall);
 		}
 		else
 		{
 			// send final ball to waiting queue
-			waiting.add(track.pop());
+			waiting.add(tilterBall);
 		}
 
 	}
