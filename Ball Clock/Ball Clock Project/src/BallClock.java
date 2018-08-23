@@ -4,6 +4,12 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * This program simulates a ball clock with a given amount of balls. Given a number of balls in the clock, the program
+ * calculates how many days it would take for the queue of waiting ball bearings would assume the original position
+ * @author Jacob Parcell
+ *
+ */
 public class BallClock 
 {
 	public static void main(String[] args) 
@@ -30,6 +36,10 @@ public class BallClock
 		printResults(results);
 	}
 	
+	/**
+	 * prints the stored results to the console
+	 * @param results	list of String results
+	 */
 	public static void printResults(ArrayList<String> results)
 	{
 		for(String s : results)
@@ -38,6 +48,11 @@ public class BallClock
 		}
 	}
 
+	/**	
+	 * This method simulates the ball clock and checks if the order of the balls matches its original position
+	 * @param numberOfBalls		number of balls in the clock
+	 * @return					number of days to reset
+	 */
 	public static int simulateClock(int numberOfBalls)
 	{		
 		// can hold at most 4 balls
@@ -87,6 +102,12 @@ public class BallClock
 		return (int) dayCount;
 	}
 
+	/**
+	 * Fills a Queue with integers representing the balls in the clock
+	 * @param waitingBalls		balls waiting to be used by the clock
+	 * @param hours				the hours stack
+	 * @param numberOfBalls		the number of balls to be used by the clock
+	 */
 	public static void fillInitialWaitingBalls(Queue<Integer> waitingBalls, Stack<Integer> hours, int numberOfBalls)
 	{
 		// add fixed ball in hours track
@@ -98,6 +119,14 @@ public class BallClock
 		}
 	}
 
+	/**
+	 * Handles the ball bearings when a track overflows
+	 * @param track			track that is overflowing
+	 * @param nextTrack		track that the tipping ball will be added to
+	 * @param waiting		the queue of waiting balls
+	 * @param hoursTrack	yes if the hours track is overflowing, no if a different track is overflowing
+	 * @return				0.5 if hours track is overflowing, 0 if a different track is overflowing
+	 */
 	public static double tilt(Stack<Integer> track, Stack<Integer> nextTrack, Queue<Integer> waiting, boolean hoursTrack)
 	{
 		// hold ball that caused the track to tilt
