@@ -6,6 +6,7 @@
  */
 #include <string>
 #include <vector>
+#include "VeryLongInteger.h"
 using namespace std;
 
 #ifndef INTEGERINQUIRY_H_
@@ -15,8 +16,11 @@ using namespace std;
 //returns a vector containing all user input as strings
 vector<string> get_user_input();
 
-void get_sum(vector<string> numbers);
+//converts each string into a VeryLongInteger and adds it to a vector
+vector<VeryLongInteger> get_numbers(vector<string> user_input);
 
+//calculate the sum of all VeryLongIntegers
+string get_sum(vector<VeryLongInteger>);
 
 
 

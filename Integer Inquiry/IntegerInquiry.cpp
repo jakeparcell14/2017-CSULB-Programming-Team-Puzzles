@@ -8,14 +8,19 @@
 #include <iostream>
 #include <vector>
 #include "IntegerInquiry.h"
+#include "VeryLongInteger.h"
 using namespace std;
 
 int main()
 {
 	//get numbers from user
-	vector<string> numbers = get_user_input();
+	vector<string> user_input = get_user_input();
 
+	//convert strings to VeryLongInteger objects
+	vector<VeryLongInteger> numbers = get_numbers(user_input);
 
+	//print result
+	cout << get_sum(numbers);
 
 }
 
@@ -47,10 +52,23 @@ vector<string> get_user_input()
 	return numbers;
 }
 
-void get_sum(vector<string> numbers)
+vector<VeryLongInteger> get_numbers(vector<string> user_input)
+{
+	vector<VeryLongInteger> numbers;
+
+	for(int i = 0; i < user_input.size(); i++)
+	{
+		VeryLongInteger *v = new VeryLongInteger(user_input[i]);
+		numbers.push_back(*v);
+	}
+	return numbers;
+}
+
+string get_sum(vector<VeryLongInteger>)
 {
 
 }
+
 
 
 
