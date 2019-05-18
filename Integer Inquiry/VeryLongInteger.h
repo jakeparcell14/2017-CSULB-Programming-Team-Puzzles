@@ -5,19 +5,28 @@
  *      Author: Jacob Parcell
  */
 #include <string>
-#include <stack>
+#include <queue>
 using namespace std;
 
 #ifndef VERYLONGINTEGER_H_
 #define VERYLONGINTEGER_H_
 
 class VeryLongInteger {
+
+private:
+	//amount of digits that a VeryLongInteger can have
+	int max_possible_digits = 100;
+
 public:
 	//chunks is a representation of the string in integer form
-	stack <int> chunks;
+	queue <int> chunks;
 
 	//chunk size is the length of the numbers added to the chunks stack
-	const int chunkSize = 4;
+	 int chunk_size = 6;
+
+
+	//largest amount of chunks possible given the largest number length and the chunk size
+	 int max_chunk_amount = max_possible_digits / chunk_size + 1;
 
 
 	VeryLongInteger(string number);

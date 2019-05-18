@@ -6,21 +6,26 @@
  */
 
 #include "VeryLongInteger.h"
+using namespace std;
+#include <iostream>
 
 VeryLongInteger::VeryLongInteger(string number)
 {
 	//add the numbers to the stack in chunks of up to four numbers
-	for(int i = 0; i < 100; i += chunkSize)
+	for(int i = number.length(); i > 0; i -= chunk_size)
 	{
-		if(i + chunkSize >= number.length())
+		if(i - chunk_size >= 0)
 		{
-			//add last chunk of numbers
-			chunks.push(( stoi(number.substr(i, number.length() - i))));
+			//add next chunk of numbers
+			chunks.push(( stoi(number.substr(i - chunk_size, chunk_size))));
+
 		}
 		else
 		{
-			//add next 4 digit chunk
-			chunks.push(( stoi(number.substr(i, chunkSize))));
+			//add last chunk of numbers that is smaller than the chunk size
+			int last_chunk_size = number.length() - (chunks.size() * chunk_size);
+
+			chunks.push(( stoi(number.substr(0, last_chunk_size))));
 		}
 	}
 }

@@ -17,7 +17,7 @@ using namespace std;
 vector<string> get_user_input();
 
 //converts each string into a VeryLongInteger and adds it to a vector
-vector<VeryLongInteger> get_numbers(vector<string> user_input);
+vector<VeryLongInteger> get_numbers(vector<string> user_input, int max_possible_digits);
 
 //calculate the sum of all VeryLongIntegers
 string get_sum(vector<VeryLongInteger>);
