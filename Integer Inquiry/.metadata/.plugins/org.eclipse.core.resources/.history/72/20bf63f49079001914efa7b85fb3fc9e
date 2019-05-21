@@ -1,0 +1,32 @@
+/*
+ * VeryLongInteger.cpp
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+
+#include "VeryLongInteger.h"
+
+VeryLongInteger::VeryLongInteger(string number)
+{
+	//add the numbers to the stack in chunks of up to four numbers
+	for(int i = 0; i < 100; i += chunkSize)
+	{
+		if(i + chunkSize >= number.length())
+		{
+			//add last chunk of numbers
+			chunks.push(( stoi(number.substr(i, number.length() - i))));
+		}
+		else
+		{
+			//add next 4 digit chunk
+			chunks.push(( stoi(number.substr(i, chunkSize))));
+		}
+	}
+}
+
+VeryLongInteger::~VeryLongInteger()
+{
+	// TODO Auto-generated destructor stub
+}
+

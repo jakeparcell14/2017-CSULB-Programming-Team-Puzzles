@@ -1,0 +1,23 @@
+/*
+ * VeryLongInteger.cpp
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+
+#include "VeryLongInteger.h"
+
+VeryLongInteger::VeryLongInteger(string number)
+{
+	for(int i = 0; i < (int) number.length() / 4 + 1; i++)
+	{
+
+	}
+
+}
+
+VeryLongInteger::~VeryLongInteger()
+{
+	// TODO Auto-generated destructor stub
+}
+

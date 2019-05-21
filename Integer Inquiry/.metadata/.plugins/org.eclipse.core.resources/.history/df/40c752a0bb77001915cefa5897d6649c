@@ -1,0 +1,29 @@
+/*
+ * IntegerInquiry.cpp
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+
+#include <iostream>
+#include <vector>
+#include "IntegerInquiry.h"
+using namespace std;
+
+int main()
+{
+	vector<int> numbers;
+
+	//get initial user input
+	int user_input;
+	cin >> user_input;
+	numbers.push_back(user_input);
+
+	while(numbers.size() < 100 && user_input != 0)
+	{
+
+	}
+
+}
+
+

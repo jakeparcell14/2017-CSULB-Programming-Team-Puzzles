@@ -1,0 +1,21 @@
+17:47:26 **** Incremental Build of configuration Debug for project Integer Inquiry ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o IntegerInquiry.o "..\\IntegerInquiry.cpp" 
+..\IntegerInquiry.cpp: In function 'std::vector<VeryLongInteger> get_numbers(std::vector<std::__cxx11::basic_string<char> >, int)':
+..\IntegerInquiry.cpp:62:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < user_input.size(); i++)
+                 ~~^~~~~~~~~~~~~~~~~~~
+..\IntegerInquiry.cpp: In function 'std::__cxx11::string get_sum(std::vector<VeryLongInteger>)':
+..\IntegerInquiry.cpp:95:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int j = 0; j < numbers.size(); j++)
+                  ~~^~~~~~~~~~~~~~~~
+..\IntegerInquiry.cpp:110:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int j = 0; j < numbers.size(); j++)
+                  ~~^~~~~~~~~~~~~~~~
+..\IntegerInquiry.cpp:133:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(chunk_sum_str.length() > chunk_size)
+      ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+g++ -o "Integer Inquiry.exe" IntegerInquiry.o VeryLongInteger.o 
+
+17:47:28 Build Finished (took 1s.516ms)
+

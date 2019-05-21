@@ -1,0 +1,18 @@
+/*
+ * VeryLongInteger.cpp
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+
+#include "VeryLongInteger.h"
+
+VeryLongInteger::VeryLongInteger() {
+	// TODO Auto-generated constructor stub
+
+}
+
+VeryLongInteger::~VeryLongInteger() {
+	// TODO Auto-generated destructor stub
+}
+

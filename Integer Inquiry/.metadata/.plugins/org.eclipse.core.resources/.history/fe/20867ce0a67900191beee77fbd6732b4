@@ -1,0 +1,37 @@
+/*
+ * VeryLongInteger.h
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+#include <string>
+#include <queue>
+using namespace std;
+
+#ifndef VERYLONGINTEGER_H_
+#define VERYLONGINTEGER_H_
+
+class VeryLongInteger {
+
+/*private:
+	//amount of digits that a VeryLongInteger can have
+	int max_possible_digits;*/
+
+public:
+	//chunks is a representation of the string in integer form
+	queue <int> chunks;
+
+	//chunk size is the length of the numbers added to the chunks stack
+	const int chunk_size = 6;
+	int max_possible_digits;//*****************remove this line
+
+	//largest amount of chunks possible given the largest number length and the chunk size
+	const int max_chunk_amount = max_possible_digits / chunk_size + 1;
+
+
+	VeryLongInteger(string number, int digit_max);
+	virtual ~VeryLongInteger();
+
+};
+
+#endif /* VERYLONGINTEGER_H_ */

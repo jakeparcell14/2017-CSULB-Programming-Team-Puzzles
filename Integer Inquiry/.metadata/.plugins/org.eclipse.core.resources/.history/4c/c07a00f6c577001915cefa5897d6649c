@@ -1,0 +1,62 @@
+/*
+ * IntegerInquiry.cpp
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+
+#include <iostream>
+#include <vector>
+#include "IntegerInquiry.h"
+#include "VeryLongInteger.h"
+using namespace std;
+
+int main()
+{
+	//get numbers from user
+	vector<string> userInput = get_user_input();
+
+	VeryLongInteger numbers[] = ;
+
+
+}
+
+vector<string> get_user_input()
+{
+	vector<string> numbers;
+
+	//get initial user input
+	string user_input;
+	cin >> user_input;
+	numbers.push_back(user_input);
+
+	//enforce rule of no more than 100 lines
+	while(numbers.size() < 100)
+	{
+		cin >> user_input;
+
+		if(user_input != "0")
+		{
+			numbers.push_back(user_input);
+		}
+		else
+		{
+			//user is finished entering numbers
+			break;
+		}
+	}
+
+	return numbers;
+}
+
+VeryLongInteger[] get_numbers(vector<string> user_input)
+{
+	VeryLongInteger[user_input.size()];
+	for(int i = 0; i < numbers.size(); i++)
+	{
+
+	}
+}
+
+
+

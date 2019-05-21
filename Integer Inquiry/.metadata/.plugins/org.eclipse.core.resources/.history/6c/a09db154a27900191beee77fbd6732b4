@@ -1,0 +1,136 @@
+/*
+ * IntegerInquiry.cpp
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include "IntegerInquiry.h"
+#include "VeryLongInteger.h"
+using namespace std;
+
+int main()
+{
+	//set max number of digits per VeryLongInteger
+	int max_possible_digits = 100;
+
+	//get numbers from user
+	vector<string> user_input = get_user_input();
+
+	//convert strings to VeryLongInteger objects
+	vector<VeryLongInteger> numbers = get_numbers(user_input, max_possible_digits);
+
+	//print result
+	cout << get_sum(numbers);
+
+}
+
+vector<string> get_user_input()
+{
+	vector<string> numbers;
+
+	//get initial user input
+	string user_input;
+
+	bool exit = false;
+
+	//enforce rule of no more than 100 lines
+	while(numbers.size() < 100 && exit == false)
+	{
+		//cout<<"entered loop"<<endl;
+
+		cin >> user_input;
+
+		//cout<<"input was " << user_input<<endl;
+
+		if(user_input.compare("0") != 0)
+		{
+			//cout<<"not a zero"<<endl;
+			numbers.push_back(user_input);
+		}
+		else
+		{
+			//user is finished entering numbers
+			//cout<<"saw the zero";
+			exit = true;
+			//break;
+		}
+	}
+	cout<<"exited the loop";
+	return numbers;
+}
+
+vector<VeryLongInteger> get_numbers(vector<string> user_input, int max_possible_digits)
+{
+	vector<VeryLongInteger> numbers;
+
+	for(int i = 0; i < user_input.size(); i++)
+	{
+		VeryLongInteger *v = new VeryLongInteger(user_input[i], max_possible_digits);
+		numbers.push_back(*v);
+	}
+	return numbers;
+}
+
+string get_sum(vector<VeryLongInteger> numbers)
+{
+	int chunk_size = numbers[0].chunk_size;
+
+	int max_chunks = numbers[0].max_chunk_amount;
+
+	//remainder to be carried
+	int remainder = 0;
+
+	//total sum of numbers
+	string total_sum = "";
+
+	//sum of respective chunks
+	int chunk_sum = 0;
+
+	//string version of the sum of respective chunks to get remainder
+	string chunk_sum_str = "";
+
+	//iterate through each possible spot in the queues
+	for(int i = 0; i < max_chunks; i++)
+	{
+		//iterate through each queue containing numbers
+		for(int j = 0; j < numbers.size(); j++)
+		{
+			if(!numbers[j].chunks.empty())
+			{
+				//add number to the chunk sum and remove it from the queue
+				chunk_sum += numbers[j].chunks.front();
+				numbers[j].chunks.pop();
+			}
+		}
+
+		//convert the chunk sum to a string to get the remainder
+		chunk_sum_str = to_string(chunk_sum);
+
+		//checks if the chunk sum overflows
+		if(chunk_sum_str.length() > chunk_size)
+		{
+			//set remainder amount to the overflow digits
+			cout<<"entered remainder"<<endl;
+			remainder = stoi(chunk_sum_str.substr(0, chunk_sum_str.length() - chunk_size));
+			cout<<"remainder fine"<<endl;
+
+			//add chunk_sum to the total sum
+			total_sum = chunk_sum_str.substr(chunk_sum_str.length() - chunk_size, chunk_size) + total_sum;
+			cout<<"totalsum fine"<<endl;
+		}
+		else
+		{
+			//reset remainder if there is none
+			remainder = 0;
+
+			//add chunk_sum to the total sum
+			total_sum = chunk_sum_str + total_sum;
+		}
+	}
+
+	return total_sum;
+}

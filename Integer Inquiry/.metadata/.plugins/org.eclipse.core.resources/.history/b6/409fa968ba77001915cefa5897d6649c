@@ -1,0 +1,17 @@
+/*
+ * IntegerInquiry.cpp
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+
+#include <iostream>
+#include "IntegerInquiry.h"
+using namespace std;
+
+int main()
+{
+
+}
+
+

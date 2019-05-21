@@ -1,0 +1,28 @@
+/*
+ * VeryLongInteger.h
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+#include <string>
+#include <stack>
+using namespace std;
+
+#ifndef VERYLONGINTEGER_H_
+#define VERYLONGINTEGER_H_
+
+class VeryLongInteger {
+public:
+	string full_number;
+	stack <int> chunks;
+
+
+	VeryLongInteger(string number);
+	virtual ~VeryLongInteger();
+
+private:
+	//chunk size is the length of the numbers added to the chunks stack
+	int chunkSize = 4;
+};
+
+#endif /* VERYLONGINTEGER_H_ */

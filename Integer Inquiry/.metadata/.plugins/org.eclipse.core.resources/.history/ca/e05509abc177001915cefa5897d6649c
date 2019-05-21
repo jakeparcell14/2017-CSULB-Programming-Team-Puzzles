@@ -1,0 +1,21 @@
+/*
+ * VeryLongInteger.h
+ *
+ *  Created on: May 16, 2019
+ *      Author: Jacob Parcell
+ */
+#include <string>
+using namespace std;
+
+#ifndef VERYLONGINTEGER_H_
+#define VERYLONGINTEGER_H_
+
+class VeryLongInteger {
+public:
+
+
+	VeryLongInteger();
+	virtual ~VeryLongInteger();
+};
+
+#endif /* VERYLONGINTEGER_H_ */
