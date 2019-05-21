@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0138)file:///E:/(05-30-2017)/CECS%20Folder/CSULB%20(Archive)/496%20(Programming%20Team)/496%20Spring%202013/2013-02-28/PascalRealConstants.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+
+	body{
+		font-size:100%;
+	}
+	
+	.sideColumn{
+		width:25%;
+	}
+	
+	.centerColumn{
+		width:800px;
+		margin:auto;
+	}
+
+	h1{
+		font-family:Arial,Verdana,sans-serif;
+		font-size:1.8em;
+		text-align:center;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+
+	}
+
+	h2{
+		font-family:Arial,Verdana,sans-serif;
+		font-size:1.2em;
+	}
+
+	p{
+		text-indent:20px;
+	}
+
+	.SampleText {
+		font-family:Courier New,monospace;
+		text-indent:0px;
+	}
+
+
+	.DisplayMath {
+		font-family:Courier New,monospace;
+		padding:0 0 12px 0;
+		text-indent:40px;
+	}
+
+	td{
+		padding:3px;
+	}
+
+	td.Data {
+		text-align:center;
+
+	}
+
+	.Subtitle{
+		font-family:Arial,Verdana,sans-serif;
+		text-align:center;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;	
+	}
+
+
+</style>
+
+
+</head>
+
+<body>
+<div class="sideColumn"></div>
+
+<div class="centerColumn">
+
+
+<h1>Pascal Real Constants</h1>
+<div class="Subtitle">
+	ACM Programming Practice<br>
+	28-Feb-2013<br>
+	Problem #1
+</div>
+
+
+<h3>Introduction</h3>
+
+<p>Pascal requires that real constants have either a decimal point, or an exponent (starting with the letter "e" or "E", and officially called a scale
+factor), or both, in addition to the usual collection of decimal digits. If a decimal point is included, it must have at least one decimal digit on each side of it.</p>
+<p>As expected, a sign (+ or -) may precede the entire number, or the exponent, or both. Exponents may not include fractional digits. Blanks may precede the entire number or follow the real constant, but they may not be embedded within it. Note that the Pascal syntax rules for real constants make no assumptions about the range of real values and neither does this problem.</p>
+
+<p>Your task in this problem is to identify legal Pascal real constants.</p>
+
+
+<h3>Input</h3>
+<p>Each line of the input contains a candidate which you are to classify. The input terminates with a line that only contains an asterisk in column one.</p>
+
+<h3>Output</h3>
+<p>For each line in the input, display your findings as illustrated in the example below.</p>
+
+<p>Your program need not handle more than 1024 subscribers as none of the towns S&amp;TC serves in Swamp County have populations larger than that.</p>
+
+<h3>Sample Input</h3>
+<div class="SampleText">1.2<br>
+&nbsp; &nbsp;1.<br>
+&nbsp; 1.0e-55<br>
+&nbsp; e-12<br>
+&nbsp; &nbsp; 6.5E<br>
+&nbsp; &nbsp; &nbsp;1e-12<br>
+&nbsp;+4.1234567890E-99999<br>
+&nbsp; &nbsp;7.6e+12.5<br>
+99<br>
+*</div>
+
+<h3>Expected Output</h3>
+<div class="SampleText">1.2 is legal.<br>
+1. is illegal.<br>
+1.0e-55 is legal.<br>
+e-12 is illegal.<br>
+6.5E is illegal.<br>
+1e-12 is legal.<br>
++4.1234567890E-99999 is legal.<br>
+7.6e+12.5 is illegal.<br>
+99 is illegal.</div>
+
+</div>
+<div class="SideColumn"></div>
+
+</body></html>
