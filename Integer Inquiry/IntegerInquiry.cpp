@@ -40,23 +40,16 @@ vector<string> get_user_input()
 	//enforce rule of no more than 100 lines
 	while(numbers.size() < 100 && exit == false)
 	{
-		//cout<<"entered loop"<<endl;
-
 		cin >> user_input;
-
-		//cout<<"input was " << user_input<<endl;
 
 		if(user_input.compare("0") != 0)
 		{
-			//cout<<"not a zero"<<endl;
 			numbers.push_back(user_input);
 		}
 		else
 		{
 			//user is finished entering numbers
-			//cout<<"saw the zero";
 			exit = true;
-			//break;
 		}
 	}
 	return numbers;
@@ -68,13 +61,9 @@ vector<VeryLongInteger> get_numbers(vector<string> user_input, int max_possible_
 
 	for(int i = 0; i < user_input.size(); i++)
 	{
-		//cout<<"attempted number" <<i<<endl;
 		VeryLongInteger *v = new VeryLongInteger(user_input[i]);
 		numbers.push_back(*v);
-
-		//cout<<"success with number" <<i<<endl;
 	}
-	cout<<"finished get_numbers";
 	return numbers;
 }
 
@@ -84,7 +73,6 @@ string get_sum(vector<VeryLongInteger> numbers)
 
 	int max_chunks = numbers[0].max_chunk_amount;
 
-	cout<<max_chunks<<endl;
 	//remainder to be carried
 	int remainder = 0;
 
@@ -109,17 +97,19 @@ string get_sum(vector<VeryLongInteger> numbers)
 			if(!numbers[j].chunks.empty())
 			{
 				//add number to the chunk sum and remove it from the queue
-				cout<<"adding "<<numbers[j].chunks.front() <<"from queue"<<j<<endl;
 				chunk_sum += numbers[j].chunks.front();
 				numbers[j].chunks.pop();
 			}
 		}
 
+		//add previous remainder to the chunk sum
+		chunk_sum += remainder;
+
 		//test if all queues are empty
 		bool finished = false;
 		for(int j = 0; j < numbers.size(); j++)
 		{
-			if(numbers[j].chunks.empty())
+			if(numbers[j].chunks.empty() && chunk_sum == 0)
 			{
 				finished = true;
 			}
@@ -135,9 +125,6 @@ string get_sum(vector<VeryLongInteger> numbers)
 			//leave loop if all queues are empty
 			break;
 		}
-
-		cout<<"finished all queues at chunk "<<i<<endl;
-		cout<<"max_chunks ="<<max_chunks<<endl;
 
 		//convert the chunk sum to a string to get the remainder
 		chunk_sum_str = to_string(chunk_sum);
