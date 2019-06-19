@@ -21,8 +21,6 @@ int main()
 {
 	int numberOfCases = 0;
 	int numberOfRungs = 0;
-	string input = "";
-
 
 	cin >> numberOfCases;
 
@@ -34,18 +32,17 @@ int main()
 	while(count < numberOfCases)
 	{
 		cin >> numberOfRungs;
-		cin >> input;
 
 		vector<int> rungHeights;
 
-		stringstream in(input);
+		string rung = "";
 
-		string temp= "";
-
-		while(in >> temp)
+		for(int i = 0; i < numberOfRungs; i++)
 		{
+			cin >> rung;
+
 			// receive rung heights given
-			rungHeights.push_back(stoi(temp));
+			rungHeights.push_back(stoi(rung));
 		}
 
 		k = findMinimumStrength(rungHeights);
@@ -100,16 +97,15 @@ bool testStrength(int strength, vector<int> rungHeights)
 		}
 	}
 
-	//strength is valid
 	return true;
 }
 
 
 void printResults(vector<int> results)
 {
-	for(int i = 1; i <= results.size(); i++)
+	for(int i = 0; i < results.size(); i++)
 	{
-		cout << "Case " << i << ": " << results[i] << endl;
+		cout << "Case " << i + 1 << ": " << results[i] << endl;
 	}
 }
 
