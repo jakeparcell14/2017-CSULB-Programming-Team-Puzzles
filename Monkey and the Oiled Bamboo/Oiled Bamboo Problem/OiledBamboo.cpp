@@ -12,8 +12,13 @@
 
 using namespace std;
 
+// This method returns the largest gap between rungs
 int findMinimumStrength(vector<int> rungHeights);
+
+// This method tests a given strength value and returns the results of success or failure when climbing the rungs
 bool testStrength(int strength, vector<int> rungHeights);
+
+// This method prints the results in the specified format from the question
 void printResults(vector<int> results);
 
 
@@ -29,6 +34,7 @@ int main()
 	vector<int> results;
 	int k = 0;
 
+	// iterate through each case
 	while(count < numberOfCases)
 	{
 		cin >> numberOfRungs;
@@ -41,17 +47,20 @@ int main()
 		{
 			cin >> rung;
 
-			// receive rung heights given
+			// add rung height to the vector
 			rungHeights.push_back(stoi(rung));
 		}
 
+		//find largest gap between rungs to start strength testing
 		k = findMinimumStrength(rungHeights);
 
+		// test strength and increment on failure until a strength value succeeds the test
 		while(testStrength(k, rungHeights) == false)
 		{
 			k++;
 		}
 
+		// add correct strength value to results vector
 		results.push_back(k);
 		count++;
 	}
